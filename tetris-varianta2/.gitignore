@@ -1,0 +1,12 @@
+*~
+.*.swp
+*.a
+*.dll
+*.dll.mdb
+*.userprefs
+*.sdf
+*.class
+libgdx-*.zip
+gwt-unitCache/
+Tetromino-html/war/*GwtDefinition/
+Tetromino-html/war/assets/
