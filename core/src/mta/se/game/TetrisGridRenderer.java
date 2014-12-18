@@ -31,9 +31,9 @@ public class TetrisGridRenderer {
 		gridRectangles = createGridRectangles();
 		
 		textures = new ArrayMap<colors, Texture>();
-		textures.put(colors.RED, new Texture(Gdx.files.internal("data/tetrominos/red.png")));
-		textures.put(colors.GREEN, new Texture(Gdx.files.internal("data/tetrominos/green.png")));
-		textures.put(colors.BLUE, new Texture(Gdx.files.internal("data/tetrominos/blue.png")));		
+		textures.put(colors.RED, new Texture(Gdx.files.internal("blocks/red.jpg")));
+		textures.put(colors.GREEN, new Texture(Gdx.files.internal("blocks/green.jpg")));
+		textures.put(colors.BLUE, new Texture(Gdx.files.internal("blocks/blue.jpg")));		
 	}
 
 	public void render(float delta) {
