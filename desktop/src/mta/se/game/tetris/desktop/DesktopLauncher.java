@@ -2,6 +2,8 @@ package mta.se.game.tetris.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.badlogic.gdx.backends.lwjgl.LwjglGraphics;
+
 import mta.se.game.tetris.tetris;
 import static mta.se.game.utils.Dimens.*;
 
@@ -11,6 +13,6 @@ public class DesktopLauncher {
 		config.title = "Tetris";
 		config.width = DESKTOP_WIDTH;
 		config.height = DESKTOP_HEIGHT;
-		new LwjglApplication(new tetris(), config);
+		new LwjglApplication(new tetris(),config);
 	}
 }

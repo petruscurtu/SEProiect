@@ -9,8 +9,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import mta.se.game.utils.Utils;
-import com.hexbit.tetris.modes.gem.MarathonModeGem;
-import com.hexbit.tetris.modes.gem.SprintModeGem;
+import mta.se.game.modes.MarathonModeGem;
+import mta.se.game.modes.SprintModeGem;
 import mta.se.game.render2d.TetrisScreen2D;
 
 

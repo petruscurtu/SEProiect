@@ -1,27 +1,25 @@
 package mta.se.game.tetris;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.FileTextureData;
 
-public class tetris extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
-	
-	@Override
-	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-	}
+import mta.se.game.gui.MainMenu;
+import mta.se.game.modes.MarathonModeGem;
+import mta.se.game.modes.SprintModeGem;
+
+public class tetris extends Game {
 
 	@Override
-	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
+	public void create() {
+		//FileTextureData.copyToPOT=true;
+		Texture.setEnforcePotImages(false);
+		//setScreen(new VectorScreen());
+		//setScreen(new GlowScreen());
+		//setScreen(new Screen3D());
+	//	setScreen(new MainMenu());
+		setScreen(new SprintModeGem());
 	}
 }

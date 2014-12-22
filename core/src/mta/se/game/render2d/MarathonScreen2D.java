@@ -2,7 +2,7 @@ package mta.se.game.render2d;
 
 import mta.se.game.utils.Utils;
 import mta.se.game.gui.FinishScreen;
-import mta.se.game.modes.gem.MarathonModeGem;
+import mta.se.game.modes.MarathonModeGem;
 
 
 public abstract class MarathonScreen2D extends TetrisScreen2D{

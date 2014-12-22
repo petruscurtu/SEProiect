@@ -2,4 +2,9 @@
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit trunk//EN" "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
 <module>
 	<source path="mta/se/game/tetris" />
+	<source path="mta/se/game/modes"/>
+	<source path="mta/se/game/gui"/>
+	<source path="mta/se/game/render2d"/>
+	<source path="mta/se/game/render3d"/>
+	<source path="mta/se/game/utils"/>
 </module>
