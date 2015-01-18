@@ -1,14 +1,14 @@
 package mta.se.game.render2d;
 
-import static mta.se.game.utils.Dimens.COMPONENT_PAD;
-import static mta.se.game.utils.Dimens.GRIDHPX;
-import static mta.se.game.utils.Dimens.GRIDWPX;
-import static mta.se.game.utils.Dimens.MARGIN;
+import static mta.se.game.model.Dimens.COMPONENT_PAD;
+import static mta.se.game.model.Dimens.GRIDHPX;
+import static mta.se.game.model.Dimens.GRIDWPX;
+import static mta.se.game.model.Dimens.MARGIN;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import mta.se.game.utils.Utils;
-import mta.se.game.gui.FinishScreen;
+import mta.se.game.views.FinishScreen;
+import mta.se.game.views.Utils;
 
 public abstract class SprintGame2D extends TetrisScreen2D {
 

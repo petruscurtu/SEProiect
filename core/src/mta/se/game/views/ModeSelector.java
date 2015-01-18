@@ -1,4 +1,4 @@
-package mta.se.game.gui;
+package mta.se.game.views;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -8,7 +8,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import mta.se.game.utils.Utils;
 import mta.se.game.modes.MarathonModeGem;
 import mta.se.game.modes.SprintModeGem;
 import mta.se.game.render2d.TetrisScreen2D;

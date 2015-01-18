@@ -1,4 +1,4 @@
-package mta.se.game.utils;
+package mta.se.game.model;
 
 import mta.se.game.render2d.Tetromino2D;
 

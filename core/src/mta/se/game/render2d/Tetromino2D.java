@@ -1,6 +1,6 @@
 package mta.se.game.render2d;
 
-import static mta.se.game.utils.Dimens.CELL;
+import static mta.se.game.model.Dimens.CELL;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -9,10 +9,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import mta.se.game.utils.Matrix;
-import mta.se.game.utils.Point;
-import mta.se.game.utils.Tetromino;
-import mta.se.game.utils.Timer;
+
+import mta.se.game.controller.Matrix;
+import mta.se.game.controller.Timer;
+import mta.se.game.model.Point;
+import mta.se.game.model.Tetromino;
 
 public class Tetromino2D extends Tetromino {
 	final float GHOST_ALPHA = 0.3f;

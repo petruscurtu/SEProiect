@@ -1,14 +1,18 @@
-package mta.se.game.utils;
+package mta.se.game.controller;
 
-import static mta.se.game.utils.Dimens.CELL;
-import static mta.se.game.utils.Dimens.GRID_HEIGHT;
-import static mta.se.game.utils.Dimens.GRID_WIDTH;
+import static mta.se.game.model.Dimens.CELL;
+import static mta.se.game.model.Dimens.GRID_HEIGHT;
+import static mta.se.game.model.Dimens.GRID_WIDTH;
 
 import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+
+import mta.se.game.model.Dimens;
+import mta.se.game.model.Point;
+import mta.se.game.model.Tetromino;
 import mta.se.game.render2d.Animation;
 import mta.se.game.render2d.AnimationBatch;
 import mta.se.game.render2d.GraphicUtils;
@@ -89,7 +93,7 @@ public abstract class Matrix {
 		return true;
 	}
 
-	boolean isValid(Tetromino tetromino, Point move) {
+	public boolean isValid(Tetromino tetromino, Point move) {
 		Point cPos = tetromino.getPos();
 		Tetromino tmp = new Tetromino(tetromino.getId());
 		tmp.setCurrentRotationState(tetromino.getCurrentRotationState());
@@ -162,7 +166,7 @@ public abstract class Matrix {
 		return false;
 	}
 
-	protected int checkClears(int level) {
+	public int checkClears(int level) {
 		// find all lines that are full
 		ArrayList<Integer> fullLines = new ArrayList<Integer>();
 		for (int i = matrix.length - 1; i >= 0; i--) {

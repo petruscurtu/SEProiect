@@ -1,6 +1,6 @@
 package mta.se.game.render3d;
 
-import static mta.se.game.utils.Dimens.CELL3D;
+import static mta.se.game.model.Dimens.CELL3D;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -13,7 +13,8 @@ import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.attributes.TextureAttribute;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
-import mta.se.game.utils.Tetromino;
+
+import mta.se.game.model.Tetromino;
 
 public class Tetromino3D extends Tetromino{
 	

@@ -1,11 +1,9 @@
 package mta.se.game.modes;
 
+import mta.se.game.render2d.MarathonScreen2D;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import mta.se.game.utils.Matrix;
-import mta.se.game.utils.Tetromino;
-import mta.se.game.utils.TetrominoStack;
-import mta.se.game.render2d.MarathonScreen2D;
 
 public class MarathonModeGem extends MarathonScreen2D {
 	

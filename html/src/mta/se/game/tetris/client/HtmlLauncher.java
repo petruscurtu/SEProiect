@@ -3,7 +3,7 @@ package mta.se.game.tetris.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import mta.se.game.tetris.tetris;
+import mta.se.game.tetris.Tetris;
 
 public class HtmlLauncher extends GwtApplication {
 
@@ -14,6 +14,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener getApplicationListener () {
-                return new tetris();
+                return new Tetris();
         }
 }

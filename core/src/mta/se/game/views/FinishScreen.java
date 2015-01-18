@@ -1,10 +1,8 @@
-package mta.se.game.gui;
+package mta.se.game.views;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
-import mta.se.game.utils.TetrisScreen;
-import mta.se.game.utils.Utils;
 
 //screen to show after a game is finshed
 //eg show a summary like stats, score time etc

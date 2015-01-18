@@ -1,4 +1,4 @@
-package mta.se.game.utils;
+package mta.se.game.controller;
 
 //list of all rotation states for each piece
 
@@ -161,7 +161,7 @@ public enum RotationStateList {
 			return stateList[state];
 		}
 		
-		int[][][] getRotationStates(){
+		public int[][][] getRotationStates(){
 			return stateList;
 		}
 		
@@ -172,45 +172,5 @@ public enum RotationStateList {
 		private RotationStateList(int[][][] statelist) {
 			stateList = statelist;
 		}	
-		/*
-		final int[][][] SHAPES = {
-				{
-					{0,0,0,0},
-					{1,1,1,1},
-					{0,0,0,0},
-					{0,0,0,0},
-				},	
-				{
-					{1,1},
-					{1,1},
-				},	
-				{
-					{0,1,0},
-					{1,1,1},
-					{0,0,0},
-				},
-				{
-					{0,1,1},
-					{1,1,0},
-					{0,0,0},
-				},
-				{
-					{1,1,0},
-					{0,1,1},
-					{0,0,0},
-				},
-				{
-					{1,0,0},
-					{1,1,1},
-					{0,0,0},
-				},
-				{
-					{0,0,1},
-					{1,1,1},
-					{0,0,0},
-				},
-		};
-		
-		*/
 	
 }

@@ -1,4 +1,4 @@
-package mta.se.game.utils;
+package mta.se.game.model;
 
 public class Dimens {
 	//cell width in px

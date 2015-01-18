@@ -1,7 +1,7 @@
 package mta.se.game.render2d;
 
-import mta.se.game.utils.Utils;
-import mta.se.game.gui.FinishScreen;
+import mta.se.game.views.FinishScreen;
+import mta.se.game.views.Utils;
 import mta.se.game.modes.MarathonModeGem;
 
 

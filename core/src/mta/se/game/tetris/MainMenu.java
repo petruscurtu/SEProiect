@@ -1,4 +1,7 @@
-package mta.se.game.gui;
+package mta.se.game.tetris;
+
+import mta.se.game.views.GuiScreen;
+import mta.se.game.views.ModeSelector;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;

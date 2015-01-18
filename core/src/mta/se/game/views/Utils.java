@@ -1,4 +1,4 @@
-package mta.se.game.utils;
+package mta.se.game.views;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;

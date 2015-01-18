@@ -1,6 +1,10 @@
-package mta.se.game.utils;
+package mta.se.game.model;
 
 import java.util.Random;
+
+import mta.se.game.controller.Matrix;
+import mta.se.game.controller.RotationStateList;
+import mta.se.game.controller.Timer;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
@@ -219,7 +223,7 @@ public class Tetromino {
 		return total;
 	}
 
-	float getSpeed(int level) {
+	public float getSpeed(int level) {
 		float p = ((float) level) / 10;
 		float r = SPEED_MIN - SPEED_MAX;
 		float speed = r * p;

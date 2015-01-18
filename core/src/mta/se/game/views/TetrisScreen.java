@@ -1,4 +1,4 @@
-package mta.se.game.utils;
+package mta.se.game.views;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -7,12 +7,14 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g3d.shaders.DefaultShader.Setters.ACubemap;
-import mta.se.game.gui.MainMenu;
-import mta.se.game.gui.ModeSelector;
+
+import mta.se.game.controller.Matrix;
+import mta.se.game.controller.Timer;
+import mta.se.game.model.Tetromino;
+import mta.se.game.model.TetrominoStack;
+import mta.se.game.tetris.MainMenu;
 
 /***
- * 
- * @author brett
  * Highest level of abstraction, its just a screen with the game logic 
  * going on in the background. One step down is the tetris screen2D class
  * which is designed for 2d rendering.
@@ -61,11 +63,6 @@ public abstract class TetrisScreen implements Screen, InputProcessor {
 		Gdx.input.setInputProcessor(this);
 		load();
 		resetGame();
-		// testing all speeds withs levels - getSpeed works
-		// for (int i = 0; i <= 10; i++) {
-		// System.out.println(mCurrentTetromino.getSpeed(i));
-		// }
-
 	}
 
 	protected void gameLogic(float delta) {

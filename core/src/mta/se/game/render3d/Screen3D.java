@@ -17,7 +17,8 @@ import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import mta.se.game.utils.TetrisScreen;
+
+import mta.se.game.views.TetrisScreen;
 
 public class Screen3D extends TetrisScreen {
 	PerspectiveCamera camera;

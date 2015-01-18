@@ -1,8 +1,8 @@
 package mta.se.game.render2d;
 
-import static mta.se.game.utils.Dimens.CELL;
-import static mta.se.game.utils.Dimens.GRID_HEIGHT;
-import static mta.se.game.utils.Dimens.GRID_WIDTH;
+import static mta.se.game.model.Dimens.CELL;
+import static mta.se.game.model.Dimens.GRID_HEIGHT;
+import static mta.se.game.model.Dimens.GRID_WIDTH;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -10,7 +10,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
-import mta.se.game.utils.Matrix;
+
+import mta.se.game.controller.Matrix;
 
 public class Matrix2D extends Matrix{
 	
@@ -61,7 +62,7 @@ public class Matrix2D extends Matrix{
 	}
 	
 	@Override
-	protected int checkClears(int level) {
+	public int checkClears(int level) {
 		int lines = super.checkClears(level);
 		if(lines == 3){
 			notifys.addNotification("Triple!", 1);

@@ -1,12 +1,12 @@
 package mta.se.game.render2d;
 
-import static mta.se.game.utils.Dimens.CELL;
-import static mta.se.game.utils.Dimens.COMPONENT_PAD;
-import static mta.se.game.utils.Dimens.GRIDHPX;
-import static mta.se.game.utils.Dimens.GRIDWPX;
-import static mta.se.game.utils.Dimens.GRID_HEIGHT;
-import static mta.se.game.utils.Dimens.GRID_WIDTH;
-import static mta.se.game.utils.Dimens.MARGIN;
+import static mta.se.game.model.Dimens.CELL;
+import static mta.se.game.model.Dimens.COMPONENT_PAD;
+import static mta.se.game.model.Dimens.GRIDHPX;
+import static mta.se.game.model.Dimens.GRIDWPX;
+import static mta.se.game.model.Dimens.GRID_HEIGHT;
+import static mta.se.game.model.Dimens.GRID_WIDTH;
+import static mta.se.game.model.Dimens.MARGIN;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -18,8 +18,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Rectangle;
-import mta.se.game.utils.Point;
-import mta.se.game.utils.TetrisScreen;
+
+import mta.se.game.model.Point;
+import mta.se.game.views.TetrisScreen;
 
 public abstract class TetrisScreen2D extends TetrisScreen {
 	protected OrthographicCamera camera;

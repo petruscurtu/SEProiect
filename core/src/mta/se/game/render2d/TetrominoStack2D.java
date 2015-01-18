@@ -1,6 +1,6 @@
 package mta.se.game.render2d;
 
-import mta.se.game.utils.TetrominoStack;
+import mta.se.game.model.TetrominoStack;
 
 public class TetrominoStack2D extends TetrominoStack{
 	private String mImageFolderName;

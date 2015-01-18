@@ -1,8 +1,8 @@
 package mta.se.game.render3d;
 
-import static mta.se.game.utils.Dimens.CELL3D;
-import static mta.se.game.utils.Dimens.GRID_HEIGHT;
-import static mta.se.game.utils.Dimens.GRID_WIDTH;
+import static mta.se.game.model.Dimens.CELL3D;
+import static mta.se.game.model.Dimens.GRID_HEIGHT;
+import static mta.se.game.model.Dimens.GRID_WIDTH;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.VertexAttributes.Usage;
@@ -15,9 +15,10 @@ import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import mta.se.game.utils.Dimens;
-import mta.se.game.utils.Matrix;
-import mta.se.game.utils.Tetromino.Type;
+
+import mta.se.game.controller.Matrix;
+import mta.se.game.model.Dimens;
+import mta.se.game.model.Tetromino.Type;
 
 public class Matrix3D extends Matrix{
 	private ModelBuilder modelBuilder = new ModelBuilder();
