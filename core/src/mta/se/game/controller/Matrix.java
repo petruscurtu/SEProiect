@@ -101,32 +101,6 @@ public abstract class Matrix {
 		return isValid(tmp);
 	}
 
-	// public boolean isValid(final Tetromino t){
-	// final int[][] shape = t.getShape();
-	// Point pos = t.getPos();
-	//
-	// for (int i = 0; i < shape.length; i++) {
-	// for (int j = 0; j < shape[i].length; j++) {
-	// if(shape[i][j] == 1){
-	// int xPos = j+pos.x;
-	//
-	// if(xPos < 0 || xPos >= GRID_WIDTH){
-	// return false;
-	// }
-	// int yPos = i+pos.y;
-	// if(yPos < 0 || yPos >= GRID_HEIGHT){
-	// return false;
-	// }
-	// if(matrix[yPos][xPos] != 0){
-	// return false;
-	// }
-	// }
-	// }
-	// }
-	//
-	// return true;
-	// }
-
 	public boolean isValid(int[][] shape, Point pos) {
 		for (int i = 0; i < shape.length; i++) {
 			for (int j = 0; j < shape[i].length; j++) {

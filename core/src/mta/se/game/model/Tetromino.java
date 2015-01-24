@@ -117,24 +117,6 @@ public class Tetromino {
 		return false;
 	}
 
-	// void rotateClockwiseOld(Matrix matrix) {
-	// int nextState = mCurrentRotationState;
-	// if (rotationStates.length > 0) {
-	// if (mCurrentRotationState < rotationStates.length - 1) {
-	// nextState++;
-	// } else {
-	// nextState = 0;
-	// }
-	// }
-	// Tetromino test = new TetrominoVector(mId);
-	// test.setPos(mPos);
-	// test.setCurrentRotationState(nextState);
-	//
-	// if (matrix.isValid(test)) {
-	// mCurrentRotationState = nextState;
-	// }
-	//
-	// }
 
 	public void move(Point move) {
 		mPos.x += move.x;
