@@ -11,7 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 
-import mta.se.game.controller.Matrix;
+import mta.se.game.model.Matrix;
 
 public class Matrix2D extends Matrix{
 	

@@ -2,9 +2,9 @@ package mta.se.game.model;
 
 import java.util.Random;
 
-import mta.se.game.controller.Matrix;
-import mta.se.game.controller.RotationStateList;
-import mta.se.game.controller.Timer;
+import mta.se.game.model.Matrix;
+import mta.se.game.model.RotationStateList;
+import mta.se.game.model.Timer;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;

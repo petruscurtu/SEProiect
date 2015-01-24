@@ -2,7 +2,7 @@ package mta.se.game.render2d;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import mta.se.game.controller.Timer;
+import mta.se.game.model.Timer;
 
 public abstract class Animation {
 	protected Timer mTimer;

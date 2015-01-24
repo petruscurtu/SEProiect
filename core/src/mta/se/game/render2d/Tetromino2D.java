@@ -10,8 +10,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-import mta.se.game.controller.Matrix;
-import mta.se.game.controller.Timer;
+import mta.se.game.model.Matrix;
+import mta.se.game.model.Timer;
 import mta.se.game.model.Point;
 import mta.se.game.model.Tetromino;
 

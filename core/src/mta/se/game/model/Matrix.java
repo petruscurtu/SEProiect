@@ -1,4 +1,4 @@
-package mta.se.game.controller;
+package mta.se.game.model;
 
 import static mta.se.game.model.Dimens.CELL;
 import static mta.se.game.model.Dimens.GRID_HEIGHT;

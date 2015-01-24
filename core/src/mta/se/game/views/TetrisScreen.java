@@ -8,8 +8,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g3d.shaders.DefaultShader.Setters.ACubemap;
 
-import mta.se.game.controller.Matrix;
-import mta.se.game.controller.Timer;
+import mta.se.game.model.Matrix;
+import mta.se.game.model.Timer;
 import mta.se.game.model.Tetromino;
 import mta.se.game.model.TetrominoStack;
 import mta.se.game.tetris.MainMenu;

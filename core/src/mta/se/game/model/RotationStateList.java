@@ -1,4 +1,4 @@
-package mta.se.game.controller;
+package mta.se.game.model;
 
 //list of all rotation states for each piece
 
