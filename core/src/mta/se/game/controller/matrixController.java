@@ -24,10 +24,9 @@ public class matrixController {
 	private int score = 0;
 	private int mLineCount = 0;
 	
-	public boolean isValid(final Tetromino t) {
+	public boolean isValid(final Tetromino t,int[][] matrix) {
 		final int[][] shape = t.getShape();
 		Point pos = t.getPos();
-		int[][] matrix =Matrix.getMatrix();
 
 		for (int i = 0; i < shape.length; i++) {
 			for (int j = 0; j < shape[i].length; j++) {
@@ -51,16 +50,15 @@ public class matrixController {
 		return true;
 	}
 
-	public boolean isValid(Tetromino tetromino, Point move) {
+	public boolean isValid(Tetromino tetromino, Point move,int [][]matrix) {
 		Point cPos = tetromino.getPos();
 		Tetromino tmp = new Tetromino(tetromino.getId());
 		tmp.setCurrentRotationState(tetromino.getCurrentRotationState());
 		tmp.setPos(new Point(cPos.x + move.x, cPos.y + move.y));
-		return isValid(tmp);
+		return isValid(tmp,matrix);
 	}
 
-	public boolean isValid(int[][] shape, Point pos) {
-		int[][] matrix =Matrix.getMatrix();
+	public boolean isValid(int[][] shape, Point pos,int[][] matrix) {
 		for (int i = 0; i < shape.length; i++) {
 			for (int j = 0; j < shape[i].length; j++) {
 				if (shape[i][j] == 1) {
@@ -83,13 +81,12 @@ public class matrixController {
 		return true;
 	}
 
-	public boolean isValid(int[][] shape, Point cPos, Point move) {
+	public boolean isValid(int[][] shape, Point cPos, Point move,int[][] matrix) {
 		Point newPos = new Point(cPos.x + move.x, cPos.y + move.y);
-		return isValid(shape, newPos);
+		return isValid(shape, newPos,matrix);
 	}
 
-	public boolean isGameOver() {
-		int[][] matrix =Matrix.getMatrix();
+	public boolean isGameOver(int[][] matrix) {
 		for (int i = 1; i < 3; i++) {
 			for (int j = 0; j < matrix[0].length; j++) {
 				if (matrix[GRID_HEIGHT - i][j] != 0) {
@@ -122,8 +119,7 @@ public class matrixController {
 		return score;
 	}
 	
-	void shiftGridDownTo(int overwritePos) {
-		int [][]matrix=Matrix.getMatrix();
+	void shiftGridDownTo(int overwritePos,int[][] matrix) {
 		for (int i = 0; i < matrix[0].length; i++) {
 			matrix[overwritePos][i] = matrix[overwritePos + 1][i];
 		}

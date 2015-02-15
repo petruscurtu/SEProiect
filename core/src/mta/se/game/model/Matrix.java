@@ -20,7 +20,7 @@ import mta.se.game.controller.matrixController;
 
 public abstract class Matrix {
 
-	protected static int[][] matrix = new int[GRID_HEIGHT][GRID_WIDTH];
+	protected int[][] matrix = new int[GRID_HEIGHT][GRID_WIDTH];
     
 	private int score = 0;
 	private int mLineCount = 0;
@@ -70,27 +70,27 @@ public abstract class Matrix {
 	}
 
 	boolean isValid(final Tetromino t) {
-		boolean response=contr.isValid(t);
+		boolean response=contr.isValid(t,matrix);
 		return response;
 	}
 
 	public boolean isValid(Tetromino tetromino, Point move) {
-		boolean response=contr.isValid(tetromino, move);
+		boolean response=contr.isValid(tetromino, move,matrix);
 		return response;
 	}
 
 	public boolean isValid(int[][] shape, Point pos) {
-		boolean response=contr.isValid(shape, pos);
+		boolean response=contr.isValid(shape, pos,matrix);
 		return response;
 	}
 
 	public boolean isValid(int[][] shape, Point cPos, Point move) {
-		boolean response=contr.isValid(shape, cPos, move);
+		boolean response=contr.isValid(shape, cPos, move,matrix);
 		return response;
 	}
 
 	public boolean isGameOver() {
-		boolean response=contr.isGameOver();
+		boolean response=contr.isGameOver(matrix);
 		return response;
 	}
 
@@ -123,7 +123,6 @@ public abstract class Matrix {
 			}
 			animationBatch.add(new LineClearAnimation(fullLines.get(i)));
 			mLineCount++;
-
 		}
 		increaseScore(fullLines.size(), level);
 
@@ -165,9 +164,5 @@ public abstract class Matrix {
 		this.mLineCount = lineCount;
 	}
 
-	public static int[][] getMatrix() {
-		// TODO Auto-generated method stub
-		return matrix;
-	}
 
 }

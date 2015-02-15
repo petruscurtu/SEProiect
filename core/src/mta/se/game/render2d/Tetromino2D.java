@@ -11,7 +11,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import mta.se.game.model.Matrix;
-import mta.se.game.model.Timer;
+import mta.se.game.controller.Timer;
 import mta.se.game.model.Point;
 import mta.se.game.model.Tetromino;
 
@@ -61,7 +61,6 @@ public class Tetromino2D extends Tetromino {
 					}
 				}
 			}
-
 			sb.setColor(c.r, c.g, c.b, 1f);
 			GraphicUtils.disableAlpha();
 		}

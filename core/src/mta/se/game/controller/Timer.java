@@ -1,4 +1,4 @@
-package mta.se.game.model;
+package mta.se.game.controller;
 
 public class Timer {
 	

@@ -4,13 +4,16 @@ import java.util.Random;
 
 import mta.se.game.model.Matrix;
 import mta.se.game.model.RotationStateList;
-import mta.se.game.model.Timer;
+import mta.se.game.controller.Timer;
+import mta.se.game.controller.tetrominoController;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 
 public class Tetromino {
 	// time it takes to be able to set keys as held
+	tetrominoController controller=new tetrominoController();
+	
 	final float KEY_HOLD_DELAY = 0.2f;
 
 	final float SPEED_MIN = .45f;
@@ -76,20 +79,14 @@ public class Tetromino {
 		rightHeldTimer.setEnabled(false);
 	}
 
-	private Tetromino(Tetromino tetromino) {
+	public Tetromino(Tetromino tetromino) {
 		this(tetromino.getId());
 		setPos(tetromino.getPos());
 		setCurrentRotationState(tetromino.getCurrentRotationState());
 	}
 
 	private int getNextRotationState() {
-		if (rotationStates.length > 0) {
-			if (mCurrentRotationState < rotationStates.length - 1) {
-				return mCurrentRotationState + 1;
-			}
-			return 0;
-		}
-		return 0;
+		return controller.getNextRotationState(rotationStates,mCurrentRotationState);
 	}
 
 	public boolean rotateClockwise(Matrix matrix) {
@@ -119,39 +116,20 @@ public class Tetromino {
 
 
 	public void move(Point move) {
-		mPos.x += move.x;
-		mPos.y += move.y;
+		controller.move(mPos, move);
 	}
 
 	public void hardDrop(Matrix matrix) {
-		mPos = getHardDropPos(matrix);
-		addToMatrix(matrix);
+		controller.hardDrop(matrix, this, rotationStates, mCurrentRotationState,mPos);
 		
 	}
 
 	public Point getHardDropPos(Matrix matrix) {
-		Point movement = new Point(0, 0);
-		while (matrix.isValid(this, movement)) {
-			movement.y--;
-		}
-		Point pos = new Point(mPos);
-		pos.add(movement);
-		pos.y++;
-		return pos;
+		return controller.getHardDropPos(matrix, this, mPos);
 	}
 
 	public void print() {
-		int[][] shape = getShape();
-		for (int y = 0; y < shape.length; y++) {
-			for (int x = 0; x < shape[y].length; x++) {
-				if (shape[y][x] != 0) {
-					System.out.print("[]");
-				} else {
-					System.out.print("  ");
-				}
-			}
-			System.out.println();
-		}
+		controller.print(rotationStates, mCurrentRotationState);
 	}
 
 	public void addToMatrix(Matrix matrix) {
@@ -193,23 +171,12 @@ public class Tetromino {
 	}
 
 	public int getCubeCount() {
-		int total = 0;
 		int[][] shape = getShape();
-		for (int i = 0; i < shape.length; i++) {
-			for (int j = 0; j < shape[0].length; j++) {
-				if (shape[i][j] == 1) {
-					total++;
-				}
-			}
-		}
-		return total;
+		return controller.getCubeCount(shape);
 	}
 
 	public float getSpeed(int level) {
-		float p = ((float) level) / 10;
-		float r = SPEED_MIN - SPEED_MAX;
-		float speed = r * p;
-		return SPEED_MIN - speed; // invert cus smaller is faster
+		return controller.getSpeed(level);
 	}
 
 	/***
@@ -222,26 +189,7 @@ public class Tetromino {
 	 */
 	public int getWidth(){
 		int[][] shape = getShape();
-		int width = 0;
-		for (int i = 0; i < shape.length; i++) {
-			int smallest = 999;
-			int biggest = -1;
-			for (int j = 0; j < shape[i].length; j++) {
-				if(shape[i][j] == 1){
-					if(shape[i][j] < smallest){
-						smallest =shape[i][j]; 
-					}
-					if(shape[i][j] > biggest){
-						biggest = shape[i][j]; 
-					}
-				}
-			}
-			int cwidth = biggest - smallest; 
-			if(width < cwidth){
-				width = cwidth;
-			}
-		}
-		return width;
+		return controller.getWidth(shape);
 	}
 	
 	
