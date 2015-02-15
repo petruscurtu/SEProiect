@@ -16,13 +16,15 @@ import mta.se.game.model.Tetromino;
 import mta.se.game.render2d.Animation;
 import mta.se.game.render2d.AnimationBatch;
 import mta.se.game.render2d.GraphicUtils;
+import mta.se.game.controller.matrixController;
 
 public abstract class Matrix {
 
-	protected int[][] matrix = new int[GRID_HEIGHT][GRID_WIDTH];
-
+	protected static int[][] matrix = new int[GRID_HEIGHT][GRID_WIDTH];
+    
 	private int score = 0;
 	private int mLineCount = 0;
+	matrixController contr=new matrixController();
 
 	public AnimationBatch animationBatch = new AnimationBatch();
 
@@ -68,76 +70,28 @@ public abstract class Matrix {
 	}
 
 	boolean isValid(final Tetromino t) {
-		final int[][] shape = t.getShape();
-		Point pos = t.getPos();
-
-		for (int i = 0; i < shape.length; i++) {
-			for (int j = 0; j < shape[i].length; j++) {
-				if (shape[i][j] == 1) {
-					int xPos = j + pos.x;
-
-					if (xPos < 0 || xPos >= GRID_WIDTH) {
-						return false;
-					}
-					int yPos = i + pos.y;
-					if (yPos < 0 || yPos >= GRID_HEIGHT) {
-						return false;
-					}
-					if (matrix[yPos][xPos] != 0) {
-						return false;
-					}
-				}
-			}
-		}
-
-		return true;
+		boolean response=contr.isValid(t);
+		return response;
 	}
 
 	public boolean isValid(Tetromino tetromino, Point move) {
-		Point cPos = tetromino.getPos();
-		Tetromino tmp = new Tetromino(tetromino.getId());
-		tmp.setCurrentRotationState(tetromino.getCurrentRotationState());
-		tmp.setPos(new Point(cPos.x + move.x, cPos.y + move.y));
-		return isValid(tmp);
+		boolean response=contr.isValid(tetromino, move);
+		return response;
 	}
 
 	public boolean isValid(int[][] shape, Point pos) {
-		for (int i = 0; i < shape.length; i++) {
-			for (int j = 0; j < shape[i].length; j++) {
-				if (shape[i][j] == 1) {
-					int xPos = j + pos.x;
-
-					if (xPos < 0 || xPos >= GRID_WIDTH) {
-						return false;
-					}
-					int yPos = i + pos.y;
-					if (yPos < 0 || yPos >= GRID_HEIGHT) {
-						return false;
-					}
-					if (matrix[yPos][xPos] != 0) {
-						return false;
-					}
-				}
-			}
-		}
-
-		return true;
+		boolean response=contr.isValid(shape, pos);
+		return response;
 	}
 
 	public boolean isValid(int[][] shape, Point cPos, Point move) {
-		Point newPos = new Point(cPos.x + move.x, cPos.y + move.y);
-		return isValid(shape, newPos);
+		boolean response=contr.isValid(shape, cPos, move);
+		return response;
 	}
 
 	public boolean isGameOver() {
-		for (int i = 1; i < 3; i++) {
-			for (int j = 0; j < matrix[0].length; j++) {
-				if (matrix[GRID_HEIGHT - i][j] != 0) {
-					return true;
-				}
-			}
-		}
-		return false;
+		boolean response=contr.isGameOver();
+		return response;
 	}
 
 	public int checkClears(int level) {
@@ -182,22 +136,7 @@ public abstract class Matrix {
 
 	// score algorythm
 	private void increaseScore(int lines, int level) {
-		switch (lines) {
-		case 1:
-			score += level * 40 + 40;
-			break;
-		case 2:
-			score += level * 100 + 100;
-			break;
-		case 3:
-			score += level * 300 + 300;
-			break;
-		case 4:
-			score += level * 1200 + 1200;
-			break;
-		default:
-			break;
-		}
+		score=contr.increaseScore(lines, level);
 	}
 
 	void shiftGridDownTo(int overwritePos) {
@@ -224,6 +163,11 @@ public abstract class Matrix {
 
 	public void setLineCount(int lineCount) {
 		this.mLineCount = lineCount;
+	}
+
+	public static int[][] getMatrix() {
+		// TODO Auto-generated method stub
+		return matrix;
 	}
 
 }
