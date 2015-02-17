@@ -7,7 +7,7 @@ import mta.se.game.render2d.SprintGame2D;
 public class SprintModeGem extends SprintGame2D{
 	Texture bg;
 	
-	public SprintModeGem() {
+	public SprintModeGem(String ImageFolder) {
 		super("gem");
 	}
 	

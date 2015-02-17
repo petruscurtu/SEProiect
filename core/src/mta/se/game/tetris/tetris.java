@@ -15,13 +15,7 @@ public class Tetris extends Game {
 
 	@Override
 	public void create() {
-		//Texture.setEnforcePotImages(false);
-		//FileTextureData.copyToPOT=true;
 		
-		//setScreen(new VectorScreen());
-		//setScreen(new GlowScreen());
-		//setScreen(new Screen3D());
 		setScreen(new MainMenu());
-		//setScreen(new SprintModeGem());
 	}
 }

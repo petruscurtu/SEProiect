@@ -11,7 +11,7 @@ public class Dimens {
 	
 	//grid dimens in cells
 	public static final int GRID_WIDTH = 10;
-	public static final int GRID_HEIGHT = 22; //top 2 hidden
+	public static final int GRID_HEIGHT = 14; //top 2 hidden
 	//window dimens in px
 	public static final int DESKTOP_HEIGHT = CELL*GRID_HEIGHT + MARGIN*2;
 	public static final int DESKTOP_WIDTH = CELL*GRID_WIDTH + MARGIN*2;

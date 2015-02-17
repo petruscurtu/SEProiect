@@ -23,6 +23,7 @@ public class matrixController {
 	
 	private int score = 0;
 	private int mLineCount = 0;
+	Matrix mMatrix;
 	
 	public boolean isValid(final Tetromino t,int[][] matrix) {
 		final int[][] shape = t.getShape();

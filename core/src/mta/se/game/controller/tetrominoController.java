@@ -8,12 +8,15 @@ import mta.se.game.model.RotationStateList;
 import mta.se.game.model.Tetromino;
 import mta.se.game.controller.Timer;
 import mta.se.game.model.Tetromino;
+import mta.se.game.views.TetrisScreen;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 
 
 public class tetrominoController {
+	
+	TetrisScreen screen;
 	
 	final float KEY_HOLD_DELAY = 0.2f;
 

@@ -13,6 +13,7 @@ import mta.se.game.controller.Timer;
 import mta.se.game.model.Tetromino;
 import mta.se.game.model.TetrominoStack;
 import mta.se.game.tetris.MainMenu;
+import mta.se.game.controller.*;
 
 /***
  * Highest level of abstraction, its just a screen with the game logic 
@@ -25,6 +26,7 @@ public abstract class TetrisScreen implements Screen, InputProcessor {
 	final float LOCK_DELAY = 0.5f;
 
 	protected Matrix mMatrix;
+	protected tetrominoController controller;
 
 	protected TetrominoStack mTetrominoStack;
 	protected Tetromino mCurrentTetromino;
@@ -68,13 +70,13 @@ public abstract class TetrisScreen implements Screen, InputProcessor {
 	protected void gameLogic(float delta) {
 		if (gameSpeedTimer.isFinished()) {
 			if (mMatrix.isValid(mCurrentTetromino, Tetromino.DOWN)) {
-				mCurrentTetromino.move(Tetromino.DOWN);
+				mCurrentTetromino.move(Tetromino.DOWN);//apeleaza controller
 				lockDelayTimer.reset();
 				lockDelayTimer.setEnabled(false);
 			} else {
 				lockDelayTimer.setEnabled(true);
 				if(lockDelayTimer.isFinished()){
-					mCurrentTetromino.addToMatrix(mMatrix);
+					mCurrentTetromino.addToMatrix(mMatrix);//apeleaza controller
 					tetrominoJustAppended = true;
 					lockDelayTimer.reset();
 				}
@@ -145,7 +147,7 @@ public abstract class TetrisScreen implements Screen, InputProcessor {
 			// single move
 			if (mMatrix.isValid(mCurrentTetromino, Tetromino.LEFT)
 					&& leftAllowed && !madeLeftMove) {
-				mCurrentTetromino.move(Tetromino.LEFT);
+				mCurrentTetromino.move(Tetromino.LEFT);//apeleaza controller
 				leftAllowed = false;
 				madeLeftMove = true;
 
